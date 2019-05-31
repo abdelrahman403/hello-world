@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            apk add --no-cache python3-pip
+            apk add --update py-pip
       - run:
           command: |
             pip3 install pipenv
