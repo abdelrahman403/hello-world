@@ -10,14 +10,6 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: Install dependencies
-          command: |
-            apk add --update py-pip3
-      - run:
-          command: |
-            pip3 install pipenv
-            pipenv install
-      - run:
           command: |
             pipenv run python manage.py test
       - store_test_results: # Upload test results for display in Test Summary
