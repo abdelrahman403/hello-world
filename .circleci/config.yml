@@ -1,13 +1,10 @@
 version: 2
-executors:
-  docker-publisher:
+jobs:
+  build:
     environment:
       IMAGE_NAME: abdelrahman16/django-app-ci
     docker:
       - image: circleci/buildpack-deps:stretch
-jobs:
-  build:
-    executor: docker-publisher
     steps:
       - checkout
       - setup_remote_docker
@@ -23,7 +20,10 @@ jobs:
           paths:
             - ./image.tar
   publish-latest:
-    executor: docker-publisher
+    environment:
+      IMAGE_NAME: abdelrahman16/django-app-ci
+    docker:
+      - image: circleci/buildpack-deps:stretch
     steps:
       - attach_workspace:
           at: /tmp/workspace
