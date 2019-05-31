@@ -13,11 +13,11 @@ jobs:
           name: Install dependencies
           command: |
             apk add --no-cache \
-              py-pip=9.0.0-r1
-            pip install
+              py3-pip=9.0.0-r1
+            pip3 install
       - run:
           command: |
-            pip install pipenv
+            pip3 install pipenv
             pipenv install
       - run:
           command: |
