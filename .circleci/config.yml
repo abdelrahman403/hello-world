@@ -5,18 +5,18 @@ jobs:
     environment:
       IMAGE_NAME: abdelrahman16/django-app-ci
     docker:
-      - image: django
+      - image: circleci/buildpack-deps:stretch
     steps:
       - checkout
       - setup_remote_docker
-      - run:
-          command: |
-            python3 manage.py test
-      - store_test_results: # Upload test results for display in Test Summary
-          path: test-results
-      - store_artifacts: # Upload test summary for display in Artifacts
-          path: test-results
-          destination: tr1
+      # - run:
+      #     command: |
+      #       python3 manage.py test
+      # - store_test_results: # Upload test results for display in Test Summary
+      #     path: test-results
+      # - store_artifacts: # Upload test summary for display in Artifacts
+      #     path: test-results
+      #     destination: tr1
       - run:
           name: Build Docker Image
           command: |
