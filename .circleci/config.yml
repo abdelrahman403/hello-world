@@ -4,7 +4,7 @@ jobs:
     environment:
       IMAGE_NAME: abdelrahman16/django-app-ci
     docker:
-      - image: circleci/buildpack-deps:stretch
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
       - setup_remote_docker
