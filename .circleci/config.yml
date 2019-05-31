@@ -1,7 +1,6 @@
 version: 2
 jobs:
   build:
-    working_directory: /app
     environment:
       IMAGE_NAME: abdelrahman16/django-app-ci
     docker:
