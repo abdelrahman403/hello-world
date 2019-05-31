@@ -5,7 +5,7 @@ jobs:
     environment:
       IMAGE_NAME: abdelrahman16/django-app-ci
     docker:
-      - image: python:3.6
+      - image: django
     steps:
       - checkout
       - setup_remote_docker
