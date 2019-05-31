@@ -10,7 +10,11 @@ jobs:
       - setup_remote_docker
       - run:
           command: |
-            python3 manage.py test
+            sudo pip install pipenv
+            pipenv install
+      - run:
+          command: |
+            pipenv run python manage.py test
       - store_test_results: # Upload test results for display in Test Summary
           path: test-results
       - store_artifacts: # Upload test summary for display in Artifacts
