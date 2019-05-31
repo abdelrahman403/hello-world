@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: /app
     environment:
-      IMAGE_NAME: abdelrahman16/django-app-ci
+      IMAGE_NAME: abdelrahman16/django-app-ci-2
     docker:
       - image: docker:17.05.0-ce-git
     steps:
@@ -21,7 +21,7 @@ jobs:
             pipenv install
       - run:
           command: |
-            pipenv run python3 manage.py test
+            pipenv run python manage.py test
       - store_test_results: # Upload test results for display in Test Summary
           path: test-results
       - store_artifacts: # Upload test summary for display in Artifacts
